@@ -80,4 +80,19 @@
         </plugins>
     </build>
 
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <profileActive>dev</profileActive>
+            </properties>
+        </profile>
+        <profile>
+            <id>product</id>
+            <properties>
+                <profileActive>product</profileActive>
+            </properties>
+        </profile>
+    </profiles>
+
 </project>
