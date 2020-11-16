@@ -22,7 +22,7 @@ public class MybatisPlusGenerator {
         // 配置GlobalConfig
         globalConfig = new GlobalConfig();
         globalConfig.setOutputDir(System.getProperty("user.dir") + "/src/main/java");
-        globalConfig.setAuthor("jobob");
+        globalConfig.setAuthor("fjy");
         globalConfig.setOpen(false);
 
         // 配置DataSourceConfig
@@ -36,13 +36,17 @@ public class MybatisPlusGenerator {
 
         // 包配置
         PackageConfig pc = new PackageConfig();
-        pc.setModuleName("模块名");
-        pc.setParent("com.baomidou.ant");
+        pc.setModuleName("entity");
+        pc.setParent("com.sunliwei.practicer");
 
         // 填充
         autoGenerator = new AutoGenerator();
         autoGenerator.setGlobalConfig(globalConfig);
         autoGenerator.setDataSource(dataSourceConfig);
         autoGenerator.setPackageInfo(pc);
+    }
+
+    public static void main(String[] args) {
+        autoGenerator.execute();
     }
 }
