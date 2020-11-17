@@ -38,7 +38,11 @@ public class MybatisPlusGenerator {
 
         // 包配置
         PackageConfig pc = new PackageConfig();
-        pc.setModuleName("entity");
+        pc.setEntity("com.sunliwei.practicer.domain");
+        pc.setMapper("com.sunliwei.practicer.mapper");
+        pc.setService("com.sunliwei.practicer.service");
+        pc.setServiceImpl("com.sunliwei.practicer.service.impl");
+        pc.setController("com.sunliwei.practicer.controller");
 
         // 策略配置
         StrategyConfig strategyConfig = new StrategyConfig();
