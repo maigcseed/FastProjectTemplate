@@ -12,7 +12,7 @@
     <groupId>com.sunliwei</groupId>
     <artifactId>practicer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>practicer</name>
+    <name>FastProjectTemplate</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
