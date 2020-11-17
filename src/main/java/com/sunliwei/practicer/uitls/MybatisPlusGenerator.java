@@ -26,6 +26,12 @@ public class MybatisPlusGenerator {
         globalConfig.setOutputDir(System.getProperty("user.dir") + "/src/main/java");
         globalConfig.setAuthor("fjy");
         globalConfig.setOpen(false);
+        globalConfig.setEntityName("%sEntity");
+        globalConfig.setMapperName("%sMapper");
+        globalConfig.setServiceImplName("%sServiceImpl");
+        globalConfig.setServiceName("%sService");
+        globalConfig.setControllerName("%sController");
+        globalConfig.setXmlName("%sDao");
 
         // 配置DataSourceConfig
         DataSourceConfig dataSourceConfig = new DataSourceConfig();
