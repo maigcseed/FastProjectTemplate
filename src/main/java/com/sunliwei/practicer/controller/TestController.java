@@ -1,12 +1,10 @@
 package com.sunliwei.practicer.controller;
 
-import com.sunliwei.practicer.domain.TestDomain;
+import com.sunliwei.practicer.entity.TestDomain;
 import com.sunliwei.practicer.mapper.TestMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 /**
  * @ClassName: TestController

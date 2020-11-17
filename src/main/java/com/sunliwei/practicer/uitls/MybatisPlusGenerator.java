@@ -45,7 +45,7 @@ public class MybatisPlusGenerator {
         // 包配置
         PackageConfig pc = new PackageConfig();
         pc.setParent("com.sunliwei.practicer");
-        pc.setEntity("domain");
+        pc.setEntity("entity");
         pc.setMapper("mapper");
         pc.setService("service");
         pc.setServiceImpl("service.impl");

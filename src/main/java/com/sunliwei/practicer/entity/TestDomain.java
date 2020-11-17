@@ -1,4 +1,4 @@
-package com.sunliwei.practicer.domain;
+package com.sunliwei.practicer.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

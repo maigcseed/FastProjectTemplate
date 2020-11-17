@@ -1,7 +1,7 @@
 package com.sunliwei.practicer.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.sunliwei.practicer.domain.TestDomain;
+import com.sunliwei.practicer.entity.TestDomain;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
