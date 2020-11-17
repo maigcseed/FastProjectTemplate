@@ -2,6 +2,7 @@ package com.sunliwei.practicer.controller;
 
 import com.sunliwei.practicer.entity.TestDomain;
 import com.sunliwei.practicer.mapper.TestMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  **/
 @RestController
 @RequestMapping("/test")
+@Slf4j
 public class TestController {
 
     @Autowired
@@ -37,6 +39,7 @@ public class TestController {
         /*List<TestDomain> testDomains = testMapper.selectList(null);*/
         TestDomain testDomain = testMapper.selectOneById((long) 1);
         System.out.println(testDomain);
+        log.info("test");
         return "s";
     }
 }
