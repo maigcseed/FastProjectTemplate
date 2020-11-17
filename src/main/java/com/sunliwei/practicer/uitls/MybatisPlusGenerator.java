@@ -34,7 +34,7 @@ public class MybatisPlusGenerator {
         globalConfig.setXmlName("%sDao");
 
         // 配置DataSourceConfig
-        DataSourceConfig dataSourceConfig = new DataSourceConfig();
+        dataSourceConfig = new DataSourceConfig();
         dataSourceConfig.setDbType(DbType.MYSQL);
         dataSourceConfig.setUrl("jdbc:mysql://rm-2zen0g2l5958x88y3so.mysql.rds.aliyuncs.com:3306/fjy_test");
         dataSourceConfig.setDriverName("com.mysql.cj.jdbc.Driver");
