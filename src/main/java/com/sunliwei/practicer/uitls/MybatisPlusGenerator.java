@@ -55,6 +55,7 @@ public class MybatisPlusGenerator {
         autoGenerator.setGlobalConfig(globalConfig);
         autoGenerator.setDataSource(dataSourceConfig);
         autoGenerator.setPackageInfo(pc);
+        autoGenerator.setStrategy(strategyConfig);
     }
 
     public static void main(String[] args) {
