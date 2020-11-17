@@ -36,8 +36,9 @@ public class TestController {
 
     @RequestMapping("/test2")
     public Object testController2(){
-        List<TestDomain> testDomains = testMapper.selectList(null);
-        System.out.println(testDomains);
+        /*List<TestDomain> testDomains = testMapper.selectList(null);*/
+        TestDomain testDomain = testMapper.selectOneById((long) 1);
+        System.out.println(testDomain);
         return "s";
     }
 }

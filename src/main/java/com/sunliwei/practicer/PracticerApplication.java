@@ -3,10 +3,10 @@ package com.sunliwei.practicer;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
-@MapperScan("com.sunliwei.practicer.mapper")
-@SpringBootApplication(scanBasePackages = "com.sunliwei.practicer")
+
+@SpringBootApplication(scanBasePackages = "com.sunliwei.practicer", exclude = DataSourceAutoConfiguration.class)
 public class PracticerApplication {
 
     public static void main(String[] args) {

@@ -2,6 +2,8 @@ package com.sunliwei.practicer.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.sunliwei.practicer.domain.TestDomain;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 /**
  * @ClassName: TestMapper
@@ -11,5 +13,8 @@ import com.sunliwei.practicer.domain.TestDomain;
  * @Version: 1.0.0
  **/
 public interface TestMapper extends BaseMapper<TestDomain> {
+
+    @Select("select * from table_test where id = ${id}")
+    TestDomain selectOneById(@Param("id") Long id);
 
 }

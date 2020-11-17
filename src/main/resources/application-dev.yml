@@ -1,0 +1,16 @@
+# 多数据源配置
+spring:
+  datasource:
+    druid:
+      db1:
+        jdbc-url: jdbc:mysql://rm-2zen0g2l5958x88y3so.mysql.rds.aliyuncs.com:3306/fjy_test
+        username: fjy
+        password: fanjinyang
+        driver-class-name: com.mysql.cj.jdbc.Driver
+
+      db2:
+        jdbc-url: jdbc:mysql://rm-2zen0g2l5958x88y3so.mysql.rds.aliyuncs.com:3306/fjy_test
+        username: fjy
+        password: fanjinyang
+        driver-class-name: com.mysql.cj.jdbc.Driver
+
