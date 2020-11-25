@@ -1,12 +1,12 @@
 package com.sunliwei.practicer.config;
 
+import com.alibaba.druid.pool.DruidDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.jdbc.DataSourceBuilder;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -30,16 +30,33 @@ import javax.sql.DataSource;
 public class PrimaryDataSourceConfig {
 
 
+    @Value("${spring.datasource.druid.db1.jdbc-url:}")
+    private String jdbcUrl;
+
+    @Value("${spring.datasource.druid.db1.username}")
+    private String userName;
+
+    @Value("${spring.datasource.druid.db1.password}")
+    private String password;
+
+    @Value("${spring.datasource.druid.db1.driver-class-name}")
+    private String driverClassName;
+
+
     // 数据源
     @Primary
-    @Bean("primaryDataSource")
-    @ConfigurationProperties(prefix = "spring.datasource.druid.db1")
-    public DataSource primaryDataSource(){
-        return DataSourceBuilder.create().build();
+    @Bean(name = "primaryDataSource")
+    public DruidDataSource dataSource(){
+        DruidDataSource druidDataSource = new DruidDataSource();
+        druidDataSource.setUrl(jdbcUrl);
+        druidDataSource.setUsername(userName);
+        druidDataSource.setPassword(password);
+        druidDataSource.setDriverClassName(driverClassName);
+        return druidDataSource;
     }
 
     // session工厂
-    @Bean("primarySqlSessionFactory")
+    @Bean
     @Primary
     public SqlSessionFactory primarySqlSessionFactory(@Qualifier("primaryDataSource") DataSource dataSource) throws Exception {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
@@ -48,18 +65,16 @@ public class PrimaryDataSourceConfig {
     }
 
     // 事务
-    @Bean("primaryTransactionManager")
+    @Bean
     @Primary
     public DataSourceTransactionManager primaryTransactionManager(@Qualifier("primaryDataSource") DataSource dataSource) {
         return new DataSourceTransactionManager(dataSource);
     }
 
     // sessionTemplate
-    @Bean("primarySqlSessionTemplate")
+    @Bean
     @Primary
     public SqlSessionTemplate primarySqlSessionTemplate(@Qualifier("primarySqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
         return new SqlSessionTemplate(sqlSessionFactory);
     }
-
-
 }

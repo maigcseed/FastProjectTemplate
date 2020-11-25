@@ -31,7 +31,7 @@ public class TestController {
         }
         return testDomains;*/
         System.out.println("s");
-        return "s";
+        return "dat";
     }
 
     @RequestMapping("/test2")

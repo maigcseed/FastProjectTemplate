@@ -1,6 +1,7 @@
 # 多数据源配置
 spring:
   datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
     druid:
       db1:
         jdbc-url: jdbc:mysql://rm-2zen0g2l5958x88y3so.mysql.rds.aliyuncs.com:3306/fjy_test
